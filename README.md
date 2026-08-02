@@ -1,4 +1,4 @@
-"""# 📊 Sistema de Inteligencia de Datos: Cobertura y Equidad Educativa (PBA)
+# 📊 Sistema de Inteligencia de Datos: Cobertura y Equidad Educativa (PBA)
 
 ![Dashboard Preview](dashboard_preview.png)
 *> Vista previa del Dashboard interactivo desarrollado en Power BI Desktop.*
@@ -33,9 +33,6 @@ El modelo fue construido siguiendo los estándares de **Modelado Dimensional en 
    +--------------------+----------------------+
    | Date / Anio / Mes  |
    +--------------------+
-
-```
-
 ```
 
 * **`Fact_Establecimientos` (Tabla de Hechos):** Registra el detalle granular de cada oferta educativa (~21.600 registros), sus matrículas y sus coordenadas geográficas exactas.
@@ -64,29 +61,27 @@ El modelo fue construido siguiendo los estándares de **Modelado Dimensional en 
 Todas las métricas fueron desarrolladas mediante medidas explícitas en la tabla contenedora `_Medidas`:
 
 * **Total de Establecimientos Únicos:**
-  ```dax
+```dax
   Total_Establecimientos = DISTINCTCOUNT(Fact_Establecimientos[clave])
-
 ```
+
 
 * **Matrícula Total:**
 ```dax
 Total_Matricula = SUM(Fact_Establecimientos[matricula])
-
 ```
 
 
 * **Población Consolidada:**
 ```dax
 Poblacion_Total = SUM(Dim_Ubicacion[población_2022])
-
 ```
+
 
 
 * **Indicador de Cobertura (Escuelas por cada 10.000 Habitantes):**
 ```dax
 Establecimientos_por_10k_Hab = DIVIDE([Total_Establecimientos], [Poblacion_Total] / 10000, 0)
-
 ```
 
 
@@ -95,7 +90,6 @@ Establecimientos_por_10k_Hab = DIVIDE([Total_Establecimientos], [Poblacion_Total
 Porcentaje_Estatal = 
 VAR TotalZona = CALCULATE([Total_Establecimientos], ALL(Fact_Establecimientos[sector]))
 RETURN DIVIDE([Establecimientos_Estatales], TotalZona, 0)
-
 ```
 
 
@@ -129,13 +123,11 @@ RETURN DIVIDE([Establecimientos_Estatales], TotalZona, 0)
 │   ├── dashboard_preview.png          # Captura de la pantalla principal
 │   └── regiones_preview.png           # Captura del mapa de regiones
 └── README.md                           # Documentación técnica del proyecto
-
 ```
 
 ---
 
 ## 👤 Autor
-
 * **Edgardo Sandoval**
 * *Estudiante Avanzado de Ciencia de Datos e IA | Business Intelligence Analyst*
 """
