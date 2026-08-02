@@ -130,4 +130,3 @@ RETURN DIVIDE([Establecimientos_Estatales], TotalZona, 0)
 ## 👤 Autor
 * **Edgardo Sandoval**
 * *Estudiante Avanzado de Ciencia de Datos e IA | Business Intelligence Analyst*
-"""
