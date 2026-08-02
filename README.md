@@ -1,4 +1,4 @@
-readme_content = """# 📊 Sistema de Inteligencia de Datos: Cobertura y Equidad Educativa (PBA)
+"""# 📊 Sistema de Inteligencia de Datos: Cobertura y Equidad Educativa (PBA)
 
 ![Dashboard Preview](dashboard_preview.png)
 *> Vista previa del Dashboard interactivo desarrollado en Power BI Desktop.*
